@@ -34,6 +34,36 @@ const WORKS = [
     img: "/works/brilliance.jpg",
     type: "vision",
   },
+  {
+    id: "PRJ_004",
+    title: "PREDICTIVE MAINTENANCE MODEL",
+    category: "REGRESSION MODEL — 2024",
+    year: "2024",
+    desc: "Machine learning model predicting equipment failure using sensor data. Achieved 92% accuracy with reduced downtime, saving operational costs by 40%.",
+    tags: ["SCIKIT-LEARN", "REGRESSION", "PREDICTION"],
+    img: "/works/agora.jpg",
+    type: "ml-model",
+  },
+  {
+    id: "PRJ_005",
+    title: "IMAGE CLASSIFICATION SYSTEM",
+    category: "DEEP LEARNING — 2024",
+    year: "2024",
+    desc: "CNN-based image classification for product quality control. Real-time detection with 96% precision for automated manufacturing inspection.",
+    tags: ["CNN", "TENSORFLOW", "OPENCV"],
+    img: "/works/skyagent.jpg",
+    type: "vision",
+  },
+  {
+    id: "PRJ_006",
+    title: "CUSTOMER SENTIMENT ANALYZER",
+    category: "NLP PROJECT — 2023",
+    year: "2023",
+    desc: "Natural language processing system for analyzing customer feedback. Classifies sentiment with 88% accuracy using LSTM networks and word embeddings.",
+    tags: ["NLP", "LSTM", "TEXT MINING"],
+    img: "/works/brilliance.jpg",
+    type: "nlp",
+  },
 ]
 
 export function CRTProjects() {
@@ -58,39 +88,6 @@ export function CRTProjects() {
         {WORKS.map((w) => (
           <WorkCard key={w.id} work={w} />
         ))}
-        {/* See all projects card */}
-        <div
-          className="flex flex-col items-center justify-center p-10 cursor-pointer group transition-all duration-150"
-          style={{
-            background: "var(--crt-paper)",
-            border: "1px solid var(--crt-border-col)",
-            minHeight: "200px",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(122,74,30,0.06)"
-            e.currentTarget.style.borderColor = "var(--crt-brown)"
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "var(--crt-paper)"
-            e.currentTarget.style.borderColor = "var(--crt-border-col)"
-          }}
-        >
-          <div
-            className="text-2xl glow-sm group-hover:glow mb-3 tracking-widest"
-            style={{ fontFamily: "VT323, monospace", color: "var(--crt-brown-bright)" }}
-          >
-            SEE ALL PROJECTS
-          </div>
-          <div className="text-xs tracking-widest" style={{ color: "var(--crt-brown-dim)" }}>
-            yadwinder.com/work
-          </div>
-          <div
-            className="text-2xl mt-4 transition-transform duration-200 group-hover:translate-x-2"
-            style={{ color: "var(--crt-brown-dim)" }}
-          >
-            ▶
-          </div>
-        </div>
       </div>
     </section>
   )

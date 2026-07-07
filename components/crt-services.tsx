@@ -43,6 +43,48 @@ const SKILLS = [
     stat: "TOOL: PYTHON + FLASK + SQL",
     icon: "◐",
   },
+  {
+    id: "07",
+    title: "PYTHON PROGRAMMING",
+    desc: "Expert-level Python development across scientific computing, data analysis, and backend systems. Strong OOP principles and functional programming patterns.",
+    stat: "TOOL: PYTHON 3.8+",
+    icon: "◌",
+  },
+  {
+    id: "08",
+    title: "SCIKIT-LEARN",
+    desc: "Comprehensive ML library expertise for supervised and unsupervised learning. Classification, regression, clustering, and dimensionality reduction pipelines.",
+    stat: "TOOL: SCIKIT-LEARN",
+    icon: "◎",
+  },
+  {
+    id: "09",
+    title: "DATABASE MANAGEMENT",
+    desc: "SQL query optimization, database design, and CRUD operations. Experience with MySQL, schema optimization, and transaction management.",
+    stat: "TOOL: MYSQL + SQL",
+    icon: "◇",
+  },
+  {
+    id: "10",
+    title: "FLASK WEB FRAMEWORK",
+    desc: "Building RESTful APIs and web backends for ML applications. Request handling, authentication, and deployment on production servers.",
+    stat: "TOOL: FLASK + WERKZEUG",
+    icon: "▲",
+  },
+  {
+    id: "11",
+    title: "OPENCV IMAGE PROCESSING",
+    desc: "Advanced image manipulation, filtering, and transformation. Real-time video processing and edge detection for production vision systems.",
+    stat: "TOOL: OPENCV + NUMPY",
+    icon: "▼",
+  },
+  {
+    id: "12",
+    title: "GIT & VERSION CONTROL",
+    desc: "Proficient with Git workflows, branching strategies, and collaborative development. GitHub repository management and commit best practices.",
+    stat: "TOOL: GIT + GITHUB",
+    icon: "◆",
+  },
 ]
 
 export function CRTServices() {
