@@ -11,7 +11,7 @@ const WORKS = [
     year: "2025",
     desc: "Built a fully offline AI assistant using on-device LLMs and Retrieval-Augmented Generation (RAG) to answer questions and generate insights strictly from a company's private knowledge base. Designed for enterprise use across IT, healthcare, and education with all inference running on-premise for complete data security and zero external API calls.",
     tags: ["PYTHON", "LOCAL LLMs", "RAG"],
-    img: "/works/agora.jpg",
+    img: "/works/rag-assistant.png",
     type: "ai-system",
   },
   {
@@ -21,7 +21,7 @@ const WORKS = [
     year: "2025",
     desc: "Built an AI-powered banking chatbot with intent recognition and dialog management that automated over 75% of routine customer queries, reducing manual query handling by over 50%.",
     tags: ["PYTHON", "NLP", "DIALOG MANAGEMENT"],
-    img: "/works/skyagent.jpg",
+    img: "/works/banking-chatbot.png",
     type: "chatbot",
   },
   {
@@ -31,7 +31,7 @@ const WORKS = [
     year: "2025",
     desc: "Engineered a real-time biometric access control system using OpenCV and dlib's HOG/CNN detection with 128-D face embeddings, achieving 98% identity match accuracy.",
     tags: ["PYTHON", "OPENCV", "DLIB"],
-    img: "/works/brilliance.jpg",
+    img: "/works/face-recognition.png",
     type: "vision",
   },
   {
@@ -41,7 +41,7 @@ const WORKS = [
     year: "2024",
     desc: "Designed and self-deployed a personal Android app that suggests meals to cook based on groceries currently available at home.",
     tags: ["ANDROID STUDIO", "JAVA"],
-    img: "/works/agora.jpg",
+    img: "/works/meal-planner.png",
     type: "mobile",
   },
   {
@@ -51,7 +51,7 @@ const WORKS = [
     year: "2024",
     desc: "Built a personal daily-routine Android app to schedule sleep, meals, work blocks, and reading time for better time management.",
     tags: ["ANDROID STUDIO", "JAVA"],
-    img: "/works/skyagent.jpg",
+    img: "/works/day-planner.png",
     type: "mobile",
   },
   {
@@ -61,7 +61,7 @@ const WORKS = [
     year: "2023",
     desc: "Regression model on 1,500+ data points across 5 features, achieving an RMSE of 1.25.",
     tags: ["R", "REGRESSION"],
-    img: "/works/brilliance.jpg",
+    img: "/works/house-price.png",
     type: "ml-model",
   },
   {
@@ -71,7 +71,7 @@ const WORKS = [
     year: "2023",
     desc: "Relational database handling 100+ bookings and 250+ check-in/check-out transactions.",
     tags: ["MYSQL", "SQL"],
-    img: "/works/agora.jpg",
+    img: "/works/hotel-management.png",
     type: "database",
   },
 ]
