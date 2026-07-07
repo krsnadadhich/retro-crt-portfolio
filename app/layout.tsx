@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Yadwinder Singh — Product Designer',
-  description: 'Freelance Product Designer helping early-stage startups build world-class products through clarity, craft, and pixel-perfect design.',
+  title: 'Krishna Dadhich — AI Developer & ML Engineer',
+  description: 'AI Developer shipping ML/DL solutions: NLP chatbots, computer vision systems, and predictive models. Full ML lifecycle expertise from data preprocessing to production deployment.',
 }
 
 export default function RootLayout({

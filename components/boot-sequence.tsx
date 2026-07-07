@@ -3,14 +3,14 @@
 import { useState, useEffect } from "react"
 
 const BOOT_LINES = [
-  "PORTFOLIO OS v2026.1 — YADWINDER.COM",
-  "RAM CHECK... 640K OK",
-  "LOADING DESIGN MODULES...",
-  "PRODUCT_DESIGN.EXE ........ OK",
-  "FIGMA.EXE ................. OK",
-  "FRAMER.EXE ................ OK",
+  "PORTFOLIO OS v2026.1 — KRISHNA_DADHICH",
+  "RAM CHECK... 16GB OK",
+  "LOADING ML/DL MODULES...",
+  "TENSORFLOW.EXE ........... OK",
+  "NLP_CHATBOTS.EXE ......... OK",
+  "COMPUTER_VISION.EXE ...... OK",
   "SIGNAL ACQUIRED [ ████████████ ] 100%",
-  "WELCOME — YADWINDER SINGH — PRODUCT DESIGNER",
+  "WELCOME — KRISHNA DADHICH — AI DEVELOPER",
   "> SYSTEM READY_",
 ]
 
@@ -71,10 +71,10 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
             className="text-5xl glow"
             style={{ fontFamily: "VT323, monospace", letterSpacing: "0.1em" }}
           >
-            YADWINDER.COM
+            KRSNADADHICH
           </div>
           <div className="text-xs glow-dim mt-1 tracking-widest">
-            FREELANCE PRODUCT DESIGNER
+            AI DEVELOPER • ML ENGINEER
           </div>
         </div>
 

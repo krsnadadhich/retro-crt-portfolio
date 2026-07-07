@@ -1,19 +1,19 @@
 "use client"
 
 const STATS = [
-  { label: "PROJECTS COMPLETED", value: "50+", unit: "TOTAL" },
-  { label: "YEARS EXPERIENCE", value: "4+", unit: "YEARS" },
-  { label: "STARTUPS WORKED WITH", value: "20+", unit: "CLIENTS" },
-  { label: "HAPPY FOUNDERS", value: "★★★★★", unit: "RATING" },
+  { label: "PROJECTS BUILT", value: "10+", unit: "SHIPPED" },
+  { label: "ML/DL EXPERTISE", value: "FULL", unit: "STACK" },
+  { label: "LANGUAGES", value: "5+", unit: "PROFICIENT" },
+  { label: "DEPLOYMENTS", value: "98%", unit: "ACCURACY" },
 ]
 
 const TOOLS = [
-  { name: "FIGMA", role: "UI / UX / PROTOTYPING", status: "ACTIVE" },
-  { name: "FRAMER", role: "WEB DESIGN + MOTION", status: "ACTIVE" },
-  { name: "NOTION", role: "RESEARCH + DOCS", status: "ACTIVE" },
-  { name: "LOTTIE", role: "MICRO-INTERACTIONS", status: "ACTIVE" },
-  { name: "WEBFLOW", role: "NO-CODE WEB", status: "ACTIVE" },
-  { name: "VS CODE", role: "FRONT-END DEV", status: "IDLE" },
+  { name: "TENSORFLOW", role: "DEEP LEARNING MODELS", status: "ACTIVE" },
+  { name: "PYTHON", role: "CORE DEVELOPMENT", status: "ACTIVE" },
+  { name: "SCIKIT-LEARN", role: "ML PIPELINES", status: "ACTIVE" },
+  { name: "OPENCV", role: "COMPUTER VISION", status: "ACTIVE" },
+  { name: "FLASK", role: "WEB BACKENDS", status: "ACTIVE" },
+  { name: "MYSQL", role: "DATA MANAGEMENT", status: "ACTIVE" },
 ]
 
 export function CRTAbout() {
@@ -42,13 +42,13 @@ export function CRTAbout() {
               $ cat bio.txt
             </div>
             <p>
-              I'm Yadwinder Singh — a freelance product designer working with early-stage startups and ambitious founders to help them bring clarity and craft into their ideas.
+              I'm Krishna Dadhich — an AI Developer building and shipping ML/DL solutions. Specialized in NLP chatbots, computer vision systems, and predictive models across the full ML lifecycle.
             </p>
             <p>
-              I help teams build world-class products that their users are going to love. I believe in moving fast, iterating till clarity, and never compromising on pixel-perfect execution.
+              I help teams deploy production-ready AI systems with hands-on experience in TensorFlow, Python, and data pipeline optimization. I focus on shipping functional, end-to-end applications independently and in team settings.
             </p>
             <p style={{ color: "var(--crt-brown-dim)" }}>
-              When I'm not designing, I'm playing cricket, watching movies, or listening to hip hop music while working. Usually all three at once.
+              When I'm not coding, I'm exploring new ML frameworks, contributing to GitHub, or playing basketball. Currently pursuing MCA at CMR University while shipping real AI projects.
             </p>
             <div className="pt-3" style={{ borderTop: "1px solid var(--crt-border-col)" }}>
               <span
@@ -59,7 +59,7 @@ export function CRTAbout() {
                   className="inline-block w-1.5 h-1.5 rounded-full"
                   style={{ background: "var(--crt-amber)", boxShadow: "0 0 6px var(--crt-amber)", animation: "blink 2s step-start infinite" }}
                 />
-                AVAILABLE FOR FEBRUARY — SEND YOUR PROJECT IDEA
+                AVAILABLE NOW — OPEN TO OPPORTUNITIES
               </span>
             </div>
           </div>

@@ -12,14 +12,14 @@ export function CRTFooter() {
               className="glow text-3xl mb-2"
               style={{ fontFamily: "VT323, monospace" }}
             >
-              YADWINDER.COM
+              KRISHNA.DEV
             </div>
             <div className="text-xs glow-dim tracking-widest mb-4">
-              FREELANCE PRODUCT DESIGNER
+              AI DEVELOPER • ML ENGINEER
             </div>
             <div className="text-xs" style={{ color: "var(--crt-brown-dim)" }}>
-              Helping founders build world-class products<br />
-              that their users are going to love.
+              Building and shipping ML/DL solutions<br />
+              that solve real problems in production.
             </div>
           </div>
 
@@ -48,10 +48,10 @@ export function CRTFooter() {
             <div className="text-xs tracking-widest glow-dim mb-4">FIND ME</div>
             <div className="space-y-2 text-xs" style={{ color: "var(--crt-brown)" }}>
               {[
-                { label: "TWITTER", href: "https://twitter.com/yadwinder_s" },
-                { label: "DRIBBBLE", href: "https://dribbble.com/yadwinder" },
-                { label: "LINKEDIN", href: "https://linkedin.com/in/yadwinder" },
-                { label: "GITHUB", href: "https://github.com/yadwinder" },
+                { label: "GITHUB", href: "https://github.com/krsnadadhich" },
+                { label: "LINKEDIN", href: "https://linkedin.com/in/krsnadadhich" },
+                { label: "EMAIL", href: "mailto:krsnadadhich@gmail.com" },
+                { label: "VERCEL", href: "https://krsnadadhich.vercel.app" },
               ].map(({ label, href }) => (
                 <div key={label}>
                   <a href={href} target="_blank" rel="noopener noreferrer" className="hover:glow-sm transition-all">
@@ -71,7 +71,7 @@ export function CRTFooter() {
             color: "var(--crt-brown-dim)",
           }}
         >
-          <div>© 2024–2026 YADWINDER SINGH — ALL RIGHTS RESERVED</div>
+          <div>© 2025–2026 KRISHNA DADHICH — ALL RIGHTS RESERVED</div>
           <div className="flex items-center gap-2">
             <span
               className="inline-block w-1.5 h-1.5 rounded-full"
@@ -81,7 +81,7 @@ export function CRTFooter() {
                 animation: "blink 2s step-start infinite",
               }}
             />
-            <span>AVAILABLE FOR NEW PROJECTS</span>
+            <span>OPEN TO OPPORTUNITIES</span>
           </div>
         </div>
       </div>

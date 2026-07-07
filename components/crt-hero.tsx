@@ -3,14 +3,14 @@
 import { useEffect, useState } from "react"
 
 const TICKER_ITEMS = [
-  "▶ AVAILABLE FOR NEW PROJECTS — 2026",
-  "◆ PRODUCT DESIGN  UX  UI  PROTOTYPING  INTERACTION",
-  "▶ WORKING WITH EARLY-STAGE STARTUPS & AMBITIOUS FOUNDERS",
-  "◆ CURRENTLY: HELPING FOUNDERS BUILD WORLD-CLASS PRODUCTS",
-  "▶ MOVE FAST. ITERATE. PIXEL-PERFECT.",
-  "◆ RECENT: AGORA  SKYAGENT  BRILLIANCE",
-  "▶ SEND YOUR PROJECT IDEA — YADWINDER.COM",
-  "◆ SIGNAL STRENGTH: 100%",
+  "▶ AI DEVELOPER — PYTHON • TENSORFLOW • NLP • COMPUTER VISION",
+  "◆ BUILDING ML/DL SOLUTIONS — RAG PIPELINES • CHATBOTS • PREDICTIVE MODELS",
+  "▶ OPEN TO NEW OPPORTUNITIES — BENGALURU, INDIA",
+  "◆ RECENT: OFFLINE RAG ASSISTANT • BANKING CHATBOT • FACE RECOGNITION SYSTEM",
+  "▶ TECH STACK: TENSORFLOW • SCIKIT-LEARN • FLASK • MYSQL",
+  "◆ EXPERTISE: NLP • COMPUTER VISION • DATA PREPROCESSING • MODEL EVALUATION",
+  "▶ CONTACT: krsnadadhich@gmail.com — 09521409593",
+  "◆ GITHUB: github.com/krsnadadhich — LINKEDIN: linkedin.com/in/krsnadadhich",
 ]
 
 export function CRTTicker() {
@@ -56,7 +56,7 @@ export function CRTHero() {
       <div className="text-center relative z-10 w-full max-w-4xl mx-auto">
         {/* System prompt line */}
         <div className="text-xs tracking-[0.3em] mb-6 glow-dim">
-          C:\PORTFOLIO\&gt; LOADING_YADWINDER_SINGH{dots}
+          C:\PORTFOLIO\&gt; LOADING_KRISHNA_DADHICH{dots}
         </div>
 
         {/* Main name */}
@@ -69,7 +69,7 @@ export function CRTHero() {
             color: "var(--crt-brown-bright)",
           }}
         >
-          YADWINDER
+          KRISHNA
         </h1>
         <h1
           className="glow flicker leading-none mb-4"
@@ -80,7 +80,7 @@ export function CRTHero() {
             color: "var(--crt-brown-bright)",
           }}
         >
-          SINGH
+          DADHICH
         </h1>
 
         {/* Subtitle */}
@@ -93,11 +93,11 @@ export function CRTHero() {
             letterSpacing: "0.2em",
           }}
         >
-          FREELANCE PRODUCT DESIGNER
+          AI DEVELOPER • ML/DL ENGINEER
         </div>
 
         <div className="text-xs tracking-widest glow-dim mb-12">
-          ◆ HELPING STARTUPS BUILD WORLD-CLASS PRODUCTS — AVAILABLE NOW ◆
+          ◆ SHIPPING END-TO-END AI SOLUTIONS — BENGALURU, INDIA ◆
         </div>
 
         {/* Terminal box */}
@@ -111,20 +111,20 @@ export function CRTHero() {
               <span className="glow-sm">whoami</span>
             </div>
             <div style={{ color: "var(--crt-brown)" }}>
-              I work with early-stage startups and ambitious founders to bring clarity and craft into their ideas — building products their users are going to love.
+              AI Developer building and deploying ML/DL solutions: NLP chatbots, computer vision systems, and predictive models. Skilled in TensorFlow, Python, and the full ML lifecycle from data preprocessing to production deployment.
             </div>
             <div className="mt-3">
               <span style={{ color: "var(--crt-brown-dim)" }}>$</span>{" "}
-              <span className="glow-sm">cat ./approach.txt</span>
+              <span className="glow-sm">cat ./expertise.txt</span>
             </div>
             <div style={{ color: "var(--crt-brown-dim)" }} className="pl-4 space-y-0.5">
-              <div>MOVE_FAST/</div>
-              <div>ITERATE_TIL_CLARITY/</div>
-              <div>PIXEL_PERFECT/</div>
+              <div>TENSORFLOW_CNN_RNN/</div>
+              <div>NLP_CHATBOTS_RAG/</div>
+              <div>COMPUTER_VISION_DEPLOYMENT/</div>
             </div>
             <div className="mt-2">
               <span style={{ color: "var(--crt-brown-dim)" }}>$</span>{" "}
-              <span className="glow-sm">./send_project_idea.sh</span>
+              <span className="glow-sm">./contact_me.sh</span>
               <span
                 style={{
                   display: "inline-block",

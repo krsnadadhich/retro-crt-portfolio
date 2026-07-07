@@ -32,7 +32,7 @@ function XPNav() {
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <span style={{ fontSize: "12px", color: "#FFD700", fontWeight: "bold" }}>⊞</span>
           <span style={{ fontSize: "11px", color: "#FFFFFF", fontWeight: "bold", textShadow: "1px 1px 0 #0A246A" }}>
-            Yadwinder Singh — Product Designer
+            Krishna Dadhich — AI Developer
           </span>
         </div>
         {/* Window controls */}

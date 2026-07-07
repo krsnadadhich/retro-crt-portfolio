@@ -3,19 +3,19 @@
 import { useState } from "react"
 
 const INFO_ROWS = [
-  { k: "WEBSITE", v: "yadwinder.com" },
-  { k: "TWITTER", v: "@yadwinder_s" },
-  { k: "DRIBBBLE", v: "dribbble.com/yadwinder" },
-  { k: "LINKEDIN", v: "linkedin.com/in/yadwinder" },
-  { k: "GITHUB", v: "github.com/yadwinder" },
-  { k: "AVAILABILITY", v: "Available from February" },
+  { k: "EMAIL", v: "krsnadadhich@gmail.com" },
+  { k: "PHONE", v: "+91 9521409593" },
+  { k: "GITHUB", v: "github.com/krsnadadhich" },
+  { k: "LINKEDIN", v: "linkedin.com/in/krsnadadhich" },
+  { k: "LOCATION", v: "Bengaluru, Karnataka" },
+  { k: "AVAILABILITY", v: "Available Now" },
 ]
 
 const STATUS_BARS = [
-  { name: "AVAILABILITY", val: 100 },
-  { name: "CREATIVE ENERGY", val: 96 },
-  { name: "COFFEE LEVEL", val: 85 },
-  { name: "INBOX", val: 70 },
+  { name: "ML EXPERTISE", val: 95 },
+  { name: "DEPLOYMENT READY", val: 100 },
+  { name: "COFFEE LEVEL", val: 90 },
+  { name: "PROJECT PIPELINE", val: 80 },
 ]
 
 export function CRTContact() {
