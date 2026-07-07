@@ -218,7 +218,7 @@ function CRTNavInner() {
           style={{ fontFamily: "VT323, monospace", fontSize: "1.6rem" }}
         >
           <span style={{ color: "var(--crt-brown-bright)" }}>▶</span>
-          YADWINDER.COM
+          KRISHNA.DEV
         </a>
 
         <div className="hidden md:flex items-center gap-6 text-xs tracking-widest">
