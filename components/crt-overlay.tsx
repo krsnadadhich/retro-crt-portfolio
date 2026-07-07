@@ -1,20 +1,14 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { useTheme } from "@/lib/theme-context"
 
 export function CRTOverlay() {
   const noiseRef = useRef<HTMLCanvasElement>(null)
-  const { theme } = useTheme()
 
   useEffect(() => {
     const canvas = noiseRef.current
     if (!canvas) return
-    if (theme !== "crt") {
-      const ctx = canvas.getContext("2d")
-      if (ctx) ctx.clearRect(0, 0, canvas.width, canvas.height)
-      return
-    }
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
@@ -48,9 +42,7 @@ export function CRTOverlay() {
 
     drawNoise()
     return () => cancelAnimationFrame(animId)
-  }, [theme])
-
-  if (theme !== "crt") return null
+  }, [])
 
   return (
     <>

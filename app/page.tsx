@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { ThemeProvider, useTheme } from "@/lib/theme-context"
-import { ThemeSwitcher, ThemeTransition } from "@/components/theme-switcher"
 import { CRTOverlay } from "@/components/crt-overlay"
 import { BootSequence } from "@/components/boot-sequence"
 import { CRTNav } from "@/components/crt-nav"
@@ -18,27 +16,22 @@ import { CRTFooter } from "@/components/crt-footer"
 
 function SiteContent() {
   const [booted, setBooted] = useState(false)
-  const { theme } = useTheme()
-
-  const navHeight = theme === "xp" ? "72px" : theme === "mac" ? "26px" : "52px"
 
   return (
     <main
       className="min-h-screen"
       style={{
         background: "var(--crt-bg)",
-        animation: theme === "crt" ? "flicker 7s infinite" : "none",
+        animation: "flicker 7s infinite",
       }}
     >
       <CRTOverlay />
-      <ThemeTransition />
-      <ThemeSwitcher />
       <BootSequence onComplete={() => setBooted(true)} />
 
       <div style={{ opacity: booted ? 1 : 0, transition: "opacity 0.4s ease" }}>
         <CRTNav />
 
-        <div style={{ paddingTop: navHeight }}>
+        <div style={{ paddingTop: "52px" }}>
           <CRTTicker />
         </div>
 
@@ -106,10 +99,6 @@ function SiteContent() {
 }
 
 export default function Home() {
-  return (
-    <ThemeProvider>
-      <SiteContent />
-    </ThemeProvider>
-  )
+  return <SiteContent />
 }
 
