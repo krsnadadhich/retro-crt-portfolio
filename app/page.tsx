@@ -11,6 +11,7 @@ import { CRTServices } from "@/components/crt-services"
 import { CRTProjects } from "@/components/crt-projects"
 import { CRTExperience } from "@/components/crt-experience"
 import { CRTCertifications } from "@/components/crt-certifications"
+import { CRTEducation } from "@/components/crt-education"
 import { CRTAbout } from "@/components/crt-about"
 import { CRTContact } from "@/components/crt-contact"
 import { CRTFooter } from "@/components/crt-footer"
@@ -74,6 +75,14 @@ function SiteContent() {
           -- CERTIFICATIONS.LOG ----------------------------------------
         </div>
         <CRTCertifications />
+
+        <div
+          className="max-w-6xl mx-auto px-6 text-xs tracking-[0.2em] py-2"
+          style={{ color: "var(--crt-brown-dim)", borderTop: "1px solid var(--crt-border-col)" }}
+        >
+          -- EDUCATION.LOG -----------------------------------------------
+        </div>
+        <CRTEducation />
 
         <div
           className="max-w-6xl mx-auto px-6 text-xs tracking-[0.2em] py-2"

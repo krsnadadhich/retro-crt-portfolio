@@ -125,17 +125,12 @@ function MacNav() {
         {/* Apple menu */}
         <div
           style={{
-            fontSize: "14px",
-            padding: "0 10px",
-            fontWeight: "bold",
-            color: "#000",
-            borderRight: "1px solid #888",
-            height: "100%",
+            fontSize: "12px",
             display: "flex",
             alignItems: "center",
           }}
         >
-          
+          KRISHNA.DEV
         </div>
 
         {/* Site name */}
