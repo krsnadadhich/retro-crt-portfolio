@@ -1,3 +1,6 @@
+import Link from "next/link"
+import { StaggerReveal, StaggerItem } from "@/components/reveal"
+
 export function CRTFooter() {
   return (
     <footer
@@ -5,12 +8,12 @@ export function CRTFooter() {
       style={{ borderTop: "1px solid var(--crt-border-col)", background: "var(--crt-paper)" }}
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
-          <div>
+          <StaggerItem>
             <div
               className="glow text-3xl mb-2"
-              style={{ fontFamily: "VT323, monospace" }}
+              style={{ fontFamily: "var(--font-vt323), monospace" }}
             >
               KRISHNA.DEV
             </div>
@@ -21,30 +24,33 @@ export function CRTFooter() {
               Building and shipping ML/DL solutions<br />
               that solve real problems in production.
             </div>
-          </div>
+          </StaggerItem>
 
           {/* Links */}
-          <div>
+          <StaggerItem>
             <div className="text-xs tracking-widest glow-dim mb-4">NAVIGATE</div>
             <div className="space-y-2 text-xs" style={{ color: "var(--crt-brown)" }}>
               {[
-                { label: "HOME", href: "#home" },
-                { label: "WORK", href: "#work" },
-                { label: "SKILLS", href: "#skills" },
-                { label: "ABOUT", href: "#about" },
-                { label: "CONTACT", href: "#contact" },
+                { label: "HOME", href: "/" },
+                { label: "WORK", href: "/#experience" },
+                { label: "ABOUT", href: "/#about" },
+                { label: "CONTACT", href: "/#contact" },
+                { label: "SKILLS", href: "/skills" },
+                { label: "EDUCATION", href: "/education" },
+                { label: "CERTIFICATIONS", href: "/certifications" },
+                { label: "PROJECTS", href: "/projects" },
               ].map(({ label, href }) => (
                 <div key={label}>
-                  <a href={href} className="hover:glow-sm transition-all">
+                  <Link href={href} className="hover:glow-sm transition-all">
                     {">"} {label}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>
-          </div>
+          </StaggerItem>
 
           {/* Socials */}
-          <div>
+          <StaggerItem>
             <div className="text-xs tracking-widest glow-dim mb-4">FIND ME</div>
             <div className="space-y-2 text-xs" style={{ color: "var(--crt-brown)" }}>
               {[
@@ -60,8 +66,8 @@ export function CRTFooter() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+          </StaggerItem>
+        </StaggerReveal>
 
         {/* Bottom bar */}
         <div
@@ -73,14 +79,7 @@ export function CRTFooter() {
         >
           <div>© 2025–2026 KRISHNA DADHICH — ALL RIGHTS RESERVED</div>
           <div className="flex items-center gap-2">
-            <span
-              className="inline-block w-1.5 h-1.5 rounded-full"
-              style={{
-                background: "var(--crt-amber)",
-                boxShadow: "0 0 6px var(--crt-amber)",
-                animation: "blink 2s step-start infinite",
-              }}
-            />
+            <span className="crt-status-dot" />
             <span>OPEN TO OPPORTUNITIES</span>
           </div>
         </div>

@@ -1,7 +1,9 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
+import { Reveal, StaggerReveal, StaggerItem } from "@/components/reveal"
 
 const WORKS = [
   {
@@ -78,70 +80,97 @@ const WORKS = [
 
 export function CRTProjects() {
   return (
-    <section id="work" className="px-6 py-24 max-w-6xl mx-auto">
-      <div className="mb-16">
+    <section id="projects" className="px-6 py-24 max-w-6xl mx-auto">
+      <Reveal className="mb-16">
         <div className="text-xs tracking-[0.3em] glow-dim mb-3">
-          -- SECTION 03 -----------------------------------------------
+          -- PROJECTS.LOG ------------------------------------------------
         </div>
         <h2
           className="glow"
-          style={{ fontFamily: "VT323, monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
+          style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
         >
-          SELECTED_WORK
+          PROJECTS.LOG
         </h2>
         <div className="text-xs glow-dim tracking-widest mt-1">
           {WORKS.length} PROJECTS — SORTED BY DATE DESC
         </div>
-      </div>
+      </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ border: "1px solid var(--crt-border-col)" }}>
+      <StaggerReveal
+        className="grid grid-cols-1 md:grid-cols-2 gap-px"
+        style={{ border: "1px solid var(--crt-border-col)" }}
+      >
         {WORKS.map((w) => (
-          <WorkCard key={w.id} work={w} />
+          <StaggerItem key={w.id}>
+            <WorkCard work={w} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerReveal>
     </section>
   )
 }
 
+const cardVariants = {
+  rest: {},
+  hover: {},
+}
+const imageVariants = {
+  rest: { scale: 1 },
+  hover: { scale: 1.04 },
+}
+const overlayVariants = {
+  rest: { opacity: 0 },
+  hover: { opacity: 1 },
+}
+
 function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
-  const [hovered, setHovered] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({ target: cardRef, offset: ["start end", "end start"] })
+  const y = useTransform(scrollYProgress, [0, 1], [-16, 16])
 
   return (
-    <div
+    <motion.div
+      ref={cardRef}
       className="group cursor-pointer relative overflow-hidden"
       style={{
         background: "var(--crt-paper)",
         borderColor: "var(--crt-border-col)",
       }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      variants={cardVariants}
     >
       {/* Image */}
       <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/3" }}>
-        <Image
-          src={work.img}
-          alt={work.title}
-          fill
-          className="object-cover transition-transform duration-500"
-          style={{
-            transform: hovered ? "scale(1.04)" : "scale(1)",
-            filter: "sepia(0.3) contrast(1.05)",
-          }}
-        />
+        <motion.div
+          className="absolute inset-x-0"
+          style={{ top: "-8%", bottom: "-8%", y }}
+          variants={imageVariants}
+          transition={{ duration: 0.5 }}
+        >
+          <Image
+            src={work.img}
+            alt={work.title}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            style={{ filter: "sepia(0.3) contrast(1.05)" }}
+          />
+        </motion.div>
         {/* Scanline overlay on image */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(100,40,0,0.07) 3px,rgba(100,40,0,0.07) 4px)",
+            background: "repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.12) 3px,rgba(0,0,0,0.12) 4px)",
           }}
         />
         {/* Hover description overlay */}
-        <div
-          className="absolute inset-0 flex flex-col justify-end p-5 transition-opacity duration-200"
-          style={{
-            background: "rgba(245,237,224,0.92)",
-            opacity: hovered ? 1 : 0,
-          }}
+        <motion.div
+          className="absolute inset-0 flex flex-col justify-end p-5"
+          style={{ background: "rgba(18,13,6,0.92)" }}
+          variants={overlayVariants}
+          transition={{ duration: 0.2 }}
         >
           <div className="text-xs tracking-widest mb-2" style={{ color: "var(--crt-brown-dim)" }}>
             {work.id}
@@ -160,7 +189,7 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Card footer */}
@@ -171,7 +200,7 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
         <div>
           <div
             className="tracking-wider glow-sm"
-            style={{ fontFamily: "VT323, monospace", fontSize: "1.3rem", color: "var(--crt-brown-bright)" }}
+            style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "1.3rem", color: "var(--crt-brown-bright)" }}
           >
             {work.title}
           </div>
@@ -183,6 +212,6 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
           {work.year}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

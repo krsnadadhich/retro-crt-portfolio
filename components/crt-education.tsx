@@ -1,5 +1,8 @@
 "use client"
 
+import type { CSSProperties } from "react"
+import { Reveal } from "@/components/reveal"
+
 const EDUCATION = [
   {
     id: "EDU_001",
@@ -24,34 +27,37 @@ const EDUCATION = [
 export function CRTEducation() {
   return (
     <section id="education" className="px-6 py-24 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <Reveal className="mb-16">
         <div className="text-xs tracking-[0.3em] glow-dim mb-3">
           -- EDUCATION.LOG ------------------------------------------------
         </div>
         <h2
           className="glow"
-          style={{ fontFamily: "VT323, monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
+          style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
         >
           EDUCATION.TXT
         </h2>
-      </div>
+      </Reveal>
 
       <div className="space-y-0" style={{ border: "1px solid var(--crt-border-col)" }}>
         {EDUCATION.map((edu, idx) => (
-          <div
+          <Reveal
             key={edu.id}
-            className="p-6"
-            style={{
-              background: idx % 2 === 0 ? "var(--crt-paper)" : "rgba(122,74,30,0.02)",
-              borderBottom: idx < EDUCATION.length - 1 ? "1px solid var(--crt-border-col)" : "none",
-            }}
+            delay={idx * 0.08}
+            className="p-6 crt-hover-tint"
+            style={
+              {
+                "--row-bg": idx % 2 === 0 ? "var(--crt-paper)" : "rgba(255,140,0,0.03)",
+                borderBottom: idx < EDUCATION.length - 1 ? "1px solid var(--crt-border-col)" : "none",
+              } as CSSProperties
+            }
           >
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Left: Degree & Institution */}
               <div className="lg:col-span-2">
                 <div
                   className="glow text-lg mb-2"
-                  style={{ fontFamily: "VT323, monospace", color: "var(--crt-brown-bright)" }}
+                  style={{ fontFamily: "var(--font-vt323), monospace", color: "var(--crt-brown-bright)" }}
                 >
                   {edu.degree}
                 </div>
@@ -101,7 +107,7 @@ export function CRTEducation() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

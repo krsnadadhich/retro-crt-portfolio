@@ -1,5 +1,9 @@
 "use client"
 
+import { motion } from "motion/react"
+import { Reveal } from "@/components/reveal"
+import { staggerContainer, staggerItem } from "@/lib/motion"
+
 const EXPERIENCE = [
   {
     id: "EXP_001",
@@ -21,25 +25,37 @@ const EXPERIENCE = [
 export function CRTExperience() {
   return (
     <section id="experience" className="px-6 py-24 max-w-6xl mx-auto">
-      <div className="mb-16">
+      <Reveal className="mb-16">
         <div className="text-xs tracking-[0.3em] glow-dim mb-3">
-          -- SECTION 03.5 -------------------------------------------
+          -- WORK_EXPERIENCE.LOG --------------------------------------
         </div>
         <h2
           className="glow"
-          style={{ fontFamily: "VT323, monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
+          style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "clamp(2.5rem,6vw,4.5rem)" }}
         >
           EXPERIENCE
         </h2>
         <div className="text-xs glow-dim tracking-widest mt-1">
           {EXPERIENCE.length} ENTRIES — REVERSE CHRONOLOGICAL ORDER
         </div>
-      </div>
+      </Reveal>
 
-      <div className="space-y-px" style={{ border: "1px solid var(--crt-border-col)" }}>
-        {EXPERIENCE.map((exp, idx) => (
-          <ExperienceCard key={exp.id} experience={exp} isLast={idx === EXPERIENCE.length - 1} />
-        ))}
+      <div className="relative pl-4">
+        {/* Timeline connector — draws in on scroll */}
+        <motion.div
+          className="absolute left-0 top-0 bottom-0"
+          style={{ width: 2, background: "var(--crt-amber)", transformOrigin: "top" }}
+          initial={{ scaleY: 0 }}
+          whileInView={{ scaleY: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        />
+
+        <div className="space-y-px" style={{ border: "1px solid var(--crt-border-col)" }}>
+          {EXPERIENCE.map((exp, idx) => (
+            <ExperienceCard key={exp.id} experience={exp} isLast={idx === EXPERIENCE.length - 1} />
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -47,10 +63,9 @@ export function CRTExperience() {
 
 function ExperienceCard({ experience, isLast }: { experience: (typeof EXPERIENCE)[0]; isLast: boolean }) {
   return (
-    <div
-      className="group cursor-pointer transition-all duration-150"
+    <Reveal
+      className="group cursor-pointer crt-hover-tint"
       style={{
-        background: "var(--crt-paper)",
         borderBottom: isLast ? "1px solid var(--crt-border-col)" : "1px solid var(--crt-border-col)",
       }}
     >
@@ -58,23 +73,17 @@ function ExperienceCard({ experience, isLast }: { experience: (typeof EXPERIENCE
       <div
         className="px-6 py-5 flex items-start justify-between border-b"
         style={{ borderColor: "var(--crt-border-col)" }}
-        onMouseEnter={(e) => {
-          e.currentTarget.parentElement!.style.background = "rgba(122,74,30,0.04)"
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.parentElement!.style.background = "var(--crt-paper)"
-        }}
       >
         <div>
           <div
             className="glow-sm tracking-widest"
-            style={{ fontFamily: "VT323, monospace", fontSize: "0.9rem", color: "var(--crt-brown-dim)" }}
+            style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "0.9rem", color: "var(--crt-brown-dim)" }}
           >
             [{experience.id}]
           </div>
           <h3
             className="mt-1 glow-sm tracking-wider"
-            style={{ fontFamily: "VT323, monospace", fontSize: "1.5rem", color: "var(--crt-brown-bright)" }}
+            style={{ fontFamily: "var(--font-vt323), monospace", fontSize: "1.5rem", color: "var(--crt-brown-bright)" }}
           >
             {experience.position}
           </h3>
@@ -104,20 +113,27 @@ function ExperienceCard({ experience, isLast }: { experience: (typeof EXPERIENCE
           <div className="text-xs tracking-widest mb-3" style={{ color: "var(--crt-brown-dim)" }}>
             KEY ACHIEVEMENTS:
           </div>
-          <ul className="space-y-2">
+          <motion.ul
+            className="space-y-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={staggerContainer}
+          >
             {experience.highlights.map((highlight, idx) => (
-              <li
+              <motion.li
                 key={idx}
                 className="text-xs leading-relaxed pl-4"
                 style={{
                   color: "var(--crt-brown)",
                   borderLeft: "2px solid var(--crt-brown-dim)",
                 }}
+                variants={staggerItem}
               >
                 {highlight}
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
 
         {/* Skills */}
@@ -138,6 +154,6 @@ function ExperienceCard({ experience, isLast }: { experience: (typeof EXPERIENCE
           </div>
         </div>
       </div>
-    </div>
+    </Reveal>
   )
 }

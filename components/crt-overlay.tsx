@@ -1,11 +1,14 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
 export function CRTOverlay() {
   const noiseRef = useRef<HTMLCanvasElement>(null)
+  const reducedMotion = useReducedMotion()
 
   useEffect(() => {
+    if (reducedMotion) return
     const canvas = noiseRef.current
     if (!canvas) return
 
@@ -30,9 +33,9 @@ export function CRTOverlay() {
 
       for (let i = 0; i < data.length; i += 4) {
         const noise = Math.random() < 0.025 ? Math.random() * 50 : 0
-        data[i]     = 120 + noise * 0.6
-        data[i + 1] = 70  + noise * 0.3
-        data[i + 2] = 20  + noise * 0.1
+        data[i]     = 200 + noise * 0.6
+        data[i + 1] = 110 + noise * 0.3
+        data[i + 2] = noise * 0.05
         data[i + 3] = noise * 2
       }
 
@@ -42,7 +45,7 @@ export function CRTOverlay() {
 
     drawNoise()
     return () => cancelAnimationFrame(animId)
-  }, [])
+  }, [reducedMotion])
 
   return (
     <>
@@ -54,7 +57,7 @@ export function CRTOverlay() {
       <canvas
         ref={noiseRef}
         className="fixed inset-0 pointer-events-none"
-        style={{ zIndex: 9996, mixBlendMode: "multiply", opacity: 0.55 }}
+        style={{ zIndex: 9996, mixBlendMode: "screen", opacity: 0.4 }}
         aria-hidden="true"
       />
     </>

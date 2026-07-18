@@ -1,5 +1,21 @@
 import type { Metadata } from 'next'
+import { Share_Tech_Mono, VT323 } from 'next/font/google'
 import './globals.css'
+import { SiteShell } from '@/components/site-shell'
+
+const shareTechMono = Share_Tech_Mono({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-share-tech-mono',
+  display: 'swap',
+})
+
+const vt323 = VT323({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-vt323',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Krishna Dadhich — AI Developer & ML Engineer',
@@ -12,15 +28,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323:wght@400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${shareTechMono.variable} ${vt323.variable}`}>
       <body className="font-mono antialiased">
-        {children}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   )

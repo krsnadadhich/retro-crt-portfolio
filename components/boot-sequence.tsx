@@ -1,6 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
+import { motion } from "motion/react"
+import { crtEase } from "@/lib/motion"
+import { BlinkCursor } from "@/components/blink-cursor"
 
 const BOOT_LINES = [
   "PORTFOLIO OS v2026.1 — KRISHNA_DADHICH",
@@ -23,11 +26,23 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
   const [currentLine, setCurrentLine] = useState(0)
   const [displayedChars, setDisplayedChars] = useState(0)
   const [done, setDone] = useState(false)
+  const skippedRef = useRef(false)
 
   useEffect(() => {
+    if (sessionStorage.getItem("booted")) {
+      skippedRef.current = true
+      setDone(true)
+      onComplete()
+    }
+  }, [onComplete])
+
+  useEffect(() => {
+    if (skippedRef.current) return
+
     if (currentLine >= BOOT_LINES.length) {
       setTimeout(() => {
         setDone(true)
+        sessionStorage.setItem("booted", "1")
         setTimeout(onComplete, 600)
       }, 500)
       return
@@ -55,21 +70,39 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
       : ""
 
   return (
-    <div
+    <motion.div
       className="fixed inset-0 flex items-center justify-center"
       style={{
         background: "var(--crt-bg)",
         zIndex: 10000,
-        opacity: done ? 0 : 1,
-        transition: "opacity 0.6s ease",
         pointerEvents: done ? "none" : "all",
       }}
+      initial={{ opacity: 0, scaleY: 0.01 }}
+      animate={
+        done
+          ? { opacity: 0, scaleY: 0.01, transition: { duration: 0.35, ease: crtEase } }
+          : { opacity: 1, scaleY: 1, transition: { duration: 0.5, ease: crtEase } }
+      }
     >
-      <div className="w-full max-w-2xl px-8 font-mono">
+      {/* Power-off flash */}
+      <motion.div
+        className="fixed inset-0 pointer-events-none"
+        style={{ background: "var(--crt-amber)", zIndex: 10001 }}
+        animate={done ? { opacity: [0, 0.5, 0] } : { opacity: 0 }}
+        transition={{ duration: 0.35, ease: crtEase }}
+      />
+
+      {/* Degauss wobble on mount */}
+      <motion.div
+        className="w-full max-w-2xl px-8 font-mono"
+        initial={{ x: 8, skewX: -3 }}
+        animate={{ x: [8, -6, 4, -2, 0], skewX: [-3, 2, -1, 0.5, 0] }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         <div className="mb-8 text-center">
           <div
             className="text-5xl glow"
-            style={{ fontFamily: "VT323, monospace", letterSpacing: "0.1em" }}
+            style={{ fontFamily: "var(--font-vt323), monospace", letterSpacing: "0.1em" }}
           >
             KRSNADADHICH
           </div>
@@ -87,18 +120,11 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
           {currentLine < BOOT_LINES.length && (
             <div className="glow-sm" style={{ color: "var(--crt-brown-bright)" }}>
               {currentText}
-              <span
-                style={{
-                  animation: "blink 0.8s step-start infinite",
-                  display: "inline-block",
-                }}
-              >
-                █
-              </span>
+              <BlinkCursor color="var(--crt-brown-bright)" speed="0.8s" />
             </div>
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
