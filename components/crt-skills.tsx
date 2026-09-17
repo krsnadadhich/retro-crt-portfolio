@@ -21,7 +21,7 @@ const SKILLS = [
     id: "03",
     title: "COMPUTER VISION",
     desc: "Real-time face recognition, object detection, and image processing. Building biometric systems and edge-deployed vision solutions.",
-    stat: "TOOL: OPENCV + DLIB + CNN",
+    stat: "TOOL: OPENCV + DLIB + FACE_RECOGNITION",
     icon: "◈",
   },
   {
@@ -48,15 +48,15 @@ const SKILLS = [
   {
     id: "07",
     title: "PYTHON PROGRAMMING",
-    desc: "Expert-level Python development across scientific computing, data analysis, and backend systems. Strong OOP principles and functional programming patterns.",
-    stat: "TOOL: PYTHON 3.8+",
+    desc: "Expert-level Python development across scientific computing, data analysis, and backend systems, with working proficiency in C and R. Strong OOP principles and functional programming patterns.",
+    stat: "TOOL: PYTHON 3.8+ · C · R",
     icon: "◌",
   },
   {
     id: "08",
     title: "SCIKIT-LEARN",
-    desc: "Comprehensive ML library expertise for supervised and unsupervised learning. Classification, regression, clustering, and dimensionality reduction pipelines.",
-    stat: "TOOL: SCIKIT-LEARN",
+    desc: "Comprehensive ML library expertise for supervised and unsupervised learning, including SVM classifiers. Classification, regression, clustering, and dimensionality reduction pipelines.",
+    stat: "TOOL: SCIKIT-LEARN + SVM",
     icon: "◎",
   },
   {
@@ -86,6 +86,27 @@ const SKILLS = [
     desc: "Proficient with Git workflows, branching strategies, and collaborative development. GitHub repository management and commit best practices.",
     stat: "TOOL: GIT + GITHUB",
     icon: "◆",
+  },
+  {
+    id: "13",
+    title: "RAG & PROMPT ENGINEERING",
+    desc: "Retrieval-Augmented Generation pipelines, prompt engineering, and vector database integration for grounding LLM responses in private knowledge bases. Building offline and on-device LLM systems for enterprise knowledge retrieval.",
+    stat: "TOOL: LANGCHAIN + LLAMAINDEX + FAISS/CHROMADB + OLLAMA",
+    icon: "▣",
+  },
+  {
+    id: "14",
+    title: "BACKEND DEVELOPMENT",
+    desc: "REST API design, authentication, and role-based access control for production web applications. MVC architecture and admin tooling for multi-tenant systems.",
+    stat: "TOOL: PHP + REST APIs + MVC",
+    icon: "▧",
+  },
+  {
+    id: "15",
+    title: "AGILE & COLLABORATION",
+    desc: "Sprint planning, backlog management, and cross-functional collaboration in Agile teams. Version control workflows and project tracking across the development lifecycle.",
+    stat: "TOOL: JIRA + GITHUB + AGILE",
+    icon: "▥",
   },
 ]
 
@@ -126,7 +147,7 @@ export function CRTSkills() {
 
 function SkillCard({ skill }: { skill: (typeof SKILLS)[0] }) {
   return (
-    <div className="p-6 group cursor-pointer crt-hover-card">
+    <div className="p-6 group crt-hover-card h-full flex flex-col">
       <div className="flex items-start justify-between mb-4">
         <div
           className="text-3xl glow-sm group-hover:glow"
@@ -148,7 +169,7 @@ function SkillCard({ skill }: { skill: (typeof SKILLS)[0] }) {
         {skill.desc}
       </p>
       <div
-        className="text-xs tracking-widest pt-3"
+        className="text-xs tracking-widest pt-3 mt-auto"
         style={{
           color: "var(--crt-brown-dim)",
           borderTop: "1px solid var(--crt-border-col)",

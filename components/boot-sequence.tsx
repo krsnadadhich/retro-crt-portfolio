@@ -13,7 +13,7 @@ const BOOT_LINES = [
   "NLP_CHATBOTS.EXE ......... OK",
   "COMPUTER_VISION.EXE ...... OK",
   "SIGNAL ACQUIRED [ ████████████ ] 100%",
-  "WELCOME — KRISHNA DADHICH — AI DEVELOPER",
+  "WELCOME — KRISHNA DADHICH — AI ENGINEER",
   "> SYSTEM READY_",
 ]
 
@@ -107,7 +107,7 @@ export function BootSequence({ onComplete }: BootSequenceProps) {
             KRSNADADHICH
           </div>
           <div className="text-xs glow-dim mt-1 tracking-widest">
-            AI DEVELOPER • ML ENGINEER
+            AI ENGINEER
           </div>
         </div>
 

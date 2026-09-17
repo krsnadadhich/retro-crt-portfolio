@@ -30,11 +30,12 @@ function GlitchHeadline({ children }: { children: string }) {
 }
 
 const TICKER_ITEMS = [
-  "▶ AI DEVELOPER — PYTHON • TENSORFLOW • NLP • COMPUTER VISION",
+  "▶ AI ENGINEER — PYTHON • RAG • LANGCHAIN • TENSORFLOW",
   "◆ BUILDING ML/DL SOLUTIONS — RAG PIPELINES • CHATBOTS • PREDICTIVE MODELS",
   "▶ OPEN TO NEW OPPORTUNITIES — BENGALURU, INDIA",
   "◆ RECENT: OFFLINE RAG ASSISTANT • BANKING CHATBOT • FACE RECOGNITION SYSTEM",
   "▶ TECH STACK: TENSORFLOW • SCIKIT-LEARN • FLASK • MYSQL",
+  "◆ RAG/LLM STACK: LANGCHAIN • LLAMAINDEX • FAISS/CHROMADB • OLLAMA",
   "◆ EXPERTISE: NLP • COMPUTER VISION • DATA PREPROCESSING • MODEL EVALUATION",
   "▶ CONTACT: krsnadadhich@gmail.com — 09521409593",
   "◆ GITHUB: github.com/krsnadadhich — LINKEDIN: linkedin.com/in/krsnadadhich",
@@ -128,7 +129,7 @@ export function CRTHero() {
             letterSpacing: "0.2em",
           }}
         >
-          AI DEVELOPER • ML/DL ENGINEER
+          AI ENGINEER
         </div>
 
         <div className="text-xs tracking-widest glow-dim mb-12">
@@ -146,7 +147,7 @@ export function CRTHero() {
               <span className="glow-sm">whoami</span>
             </div>
             <div style={{ color: "var(--crt-brown)" }}>
-              AI Developer building and deploying ML/DL solutions: NLP chatbots, computer vision systems, and predictive models. Skilled in TensorFlow, Python, and the full ML lifecycle from data preprocessing to production deployment.
+              AI Engineer building and deploying RAG pipelines and ML/DL solutions: NLP chatbots, computer vision systems, and predictive models. Skilled in Python, LangChain, TensorFlow, and SQL across the full ML lifecycle — data preprocessing, model development, evaluation, and deployment.
             </div>
             <div className="mt-3">
               <span style={{ color: "var(--crt-brown-dim)" }}>$</span>{" "}
@@ -154,6 +155,7 @@ export function CRTHero() {
             </div>
             <div style={{ color: "var(--crt-brown-dim)" }} className="pl-4 space-y-0.5">
               <div>TENSORFLOW_CNN_RNN/</div>
+              <div>RAG_LLM_PIPELINES/</div>
               <div>NLP_CHATBOTS_RAG/</div>
               <div>COMPUTER_VISION_DEPLOYMENT/</div>
             </div>
@@ -181,12 +183,20 @@ export function CRTHero() {
           >
             [ SEND PROJECT IDEA ]
           </motion.a>
+          <motion.a
+            href="/resume.pdf"
+            download
+            className="text-xs tracking-[0.2em] px-6 py-3 crt-cta-secondary"
+            whileTap={{ scale: 0.96 }}
+          >
+            [ DOWNLOAD RESUME ]
+          </motion.a>
         </div>
       </div>
 
       {/* Bottom scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs tracking-widest glow-dim"
+        className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs tracking-widest glow-dim"
         style={{ animation: reducedMotion ? undefined : "blink 2s step-start infinite" }}
       >
         ▼ SCROLL DOWN ▼

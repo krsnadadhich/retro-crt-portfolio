@@ -18,7 +18,7 @@ interface NowPlayingWidgetProps {
 
 export function NowPlayingWidget({ open, onClose }: NowPlayingWidgetProps) {
   const reducedMotion = useReducedMotion()
-  const { trackName, loopDuration, elapsed, isPlaying, play, pause, next, stop } = useChiptunePlayer()
+  const { trackName, loopDuration, elapsed, isPlaying, play, pause, stop } = useChiptunePlayer()
 
   useEffect(() => {
     if (open) {
@@ -89,13 +89,6 @@ export function NowPlayingWidget({ open, onClose }: NowPlayingWidgetProps) {
                 style={{ color: "var(--crt-brown-bright)" }}
               >
                 {isPlaying ? "[ || ]" : "[ ▶ ]"}
-              </button>
-              <button
-                onClick={next}
-                className="cursor-pointer px-3 py-1"
-                style={{ color: "var(--crt-brown-dim)" }}
-              >
-                [ ▶▶ ]
               </button>
             </div>
           </div>

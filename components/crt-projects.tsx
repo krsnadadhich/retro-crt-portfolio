@@ -11,30 +11,33 @@ const WORKS = [
     title: "OFFLINE RAG-BASED AI ASSISTANT",
     category: "AI SYSTEM",
     year: "2025",
-    desc: "Built a fully offline AI assistant using on-device LLMs and Retrieval-Augmented Generation (RAG) to answer questions and generate insights strictly from a company's private knowledge base. Designed for enterprise use across IT, healthcare, and education with all inference running on-premise for complete data security and zero external API calls.",
+    desc: "Built a fully offline AI assistant using on-device LLMs and Retrieval-Augmented Generation (RAG) to answer questions and generate insights strictly from a company's private knowledge base. Designed for enterprise use across IT, healthcare, and education — including auto-generating quiz and question papers from course material — with all inference running on-premise for complete data security and zero external API calls.",
     tags: ["PYTHON", "LOCAL LLMs", "RAG"],
     img: "/works/rag-assistant.png",
     type: "ai-system",
+    link: "https://github.com/krsnadadhich/RAG-based-Local-AI-Assistant",
   },
   {
     id: "PRJ_002",
     title: "BANKING CHATBOT SYSTEM",
     category: "NLP PROJECT",
     year: "2025",
-    desc: "Built an AI-powered banking chatbot with intent recognition and dialog management that automated over 75% of routine customer queries, reducing manual query handling by over 50%.",
+    desc: "Built an AI-powered banking chatbot with intent recognition and dialog management that automated over 75% of routine customer queries, reducing manual query handling by over 50%. Optimized response accuracy and latency through iterative testing and model tuning, ensuring reliable performance under real-world query variations.",
     tags: ["PYTHON", "NLP", "DIALOG MANAGEMENT"],
     img: "/works/banking-chatbot.png",
     type: "chatbot",
+    link: "https://github.com/krsnadadhich",
   },
   {
     id: "PRJ_003",
     title: "FACE RECOGNITION GATE SYSTEM",
     category: "COMPUTER VISION",
     year: "2025",
-    desc: "Engineered a real-time biometric access control system using OpenCV and dlib's HOG/CNN detection with 128-D face embeddings, achieving 98% identity match accuracy.",
+    desc: "Engineered a real-time biometric access control system using OpenCV and dlib's HOG/CNN detection with 128-D face embeddings, achieving 98% identity match accuracy. Designed a live webcam-based detection loop capable of identifying registered residents in real time and simulating gate-open/access-denied responses based on match confidence.",
     tags: ["PYTHON", "OPENCV", "DLIB"],
     img: "/works/face-recognition.png",
     type: "vision",
+    link: "https://github.com/krsnadadhich/face_recognition_gatesystem",
   },
   {
     id: "PRJ_004",
@@ -45,6 +48,7 @@ const WORKS = [
     tags: ["ANDROID STUDIO", "JAVA"],
     img: "/works/meal-planner.png",
     type: "mobile",
+    link: "https://github.com/krsnadadhich/meal-mate-planner",
   },
   {
     id: "PRJ_005",
@@ -55,6 +59,7 @@ const WORKS = [
     tags: ["ANDROID STUDIO", "JAVA"],
     img: "/works/day-planner.png",
     type: "mobile",
+    link: "https://github.com/krsnadadhich/discipline-engine",
   },
   {
     id: "PRJ_006",
@@ -65,6 +70,7 @@ const WORKS = [
     tags: ["R", "REGRESSION"],
     img: "/works/house-price.png",
     type: "ml-model",
+    link: "https://github.com/krsnadadhich",
   },
   {
     id: "PRJ_007",
@@ -75,6 +81,7 @@ const WORKS = [
     tags: ["MYSQL", "SQL"],
     img: "/works/hotel-management.png",
     type: "database",
+    link: "https://github.com/krsnadadhich",
   },
 ]
 
@@ -100,8 +107,8 @@ export function CRTProjects() {
         className="grid grid-cols-1 md:grid-cols-2 gap-px"
         style={{ border: "1px solid var(--crt-border-col)" }}
       >
-        {WORKS.map((w) => (
-          <StaggerItem key={w.id}>
+        {WORKS.map((w, i) => (
+          <StaggerItem key={w.id} className={i === WORKS.length - 1 && WORKS.length % 2 === 1 ? "md:col-span-2" : undefined}>
             <WorkCard work={w} />
           </StaggerItem>
         ))}
@@ -124,14 +131,17 @@ const overlayVariants = {
 }
 
 function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLAnchorElement>(null)
   const { scrollYProgress } = useScroll({ target: cardRef, offset: ["start end", "end start"] })
   const y = useTransform(scrollYProgress, [0, 1], [-16, 16])
 
   return (
-    <motion.div
+    <motion.a
       ref={cardRef}
-      className="group cursor-pointer relative overflow-hidden"
+      href={work.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group cursor-pointer relative overflow-hidden block"
       style={{
         background: "var(--crt-paper)",
         borderColor: "var(--crt-border-col)",
@@ -189,6 +199,9 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
               </span>
             ))}
           </div>
+          <div className="text-xs tracking-widest mt-3 glow-sm" style={{ color: "var(--crt-brown-bright)" }}>
+            VIEW ON GITHUB →
+          </div>
         </motion.div>
       </div>
 
@@ -212,6 +225,6 @@ function WorkCard({ work }: { work: (typeof WORKS)[0] }) {
           {work.year}
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   )
 }

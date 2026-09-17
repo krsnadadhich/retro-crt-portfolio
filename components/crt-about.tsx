@@ -8,7 +8,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion"
 
 const STATS = [
   { label: "PROJECTS BUILT", value: "10+", unit: "SHIPPED" },
-  { label: "ML/DL EXPERTISE", value: "FULL", unit: "STACK" },
+  { label: "AI/ML EXPERTISE", value: "FULL", unit: "STACK" },
   { label: "LANGUAGES", value: "5+", unit: "PROFICIENT" },
   { label: "DEPLOYMENTS", value: "98%", unit: "ACCURACY" },
 ]
@@ -22,6 +22,10 @@ const TOOLS = [
   { name: "OPENCV", role: "COMPUTER VISION", status: "ACTIVE" },
   { name: "FLASK", role: "WEB BACKENDS", status: "ACTIVE" },
   { name: "MYSQL", role: "DATA MANAGEMENT", status: "ACTIVE" },
+  { name: "LANGCHAIN", role: "LLM ORCHESTRATION", status: "ACTIVE" },
+  { name: "LLAMAINDEX", role: "RAG DATA FRAMEWORK", status: "ACTIVE" },
+  { name: "FAISS / CHROMADB", role: "VECTOR DATABASES", status: "ACTIVE" },
+  { name: "OLLAMA / LLAMA.CPP", role: "ON-DEVICE LLM RUNTIME", status: "ACTIVE" },
 ]
 
 function CountUpStat({ value }: { value: string }) {
@@ -116,7 +120,7 @@ export function CRTAbout() {
               $ cat bio.txt
             </div>
             <p>
-              I'm Krishna Dadhich — an AI Developer building and shipping ML/DL solutions. Specialized in NLP chatbots, computer vision systems, and predictive models across the full ML lifecycle.
+              I'm Krishna Dadhich — an AI Engineer building and shipping RAG pipelines and ML/DL solutions. Specialized in LLM applications, NLP chatbots, computer vision systems, and predictive models across the full ML lifecycle.
             </p>
             <p>
               I help teams deploy production-ready AI systems with hands-on experience in TensorFlow, Python, and data pipeline optimization. I focus on shipping functional, end-to-end applications independently and in team settings.

@@ -18,7 +18,7 @@ export function CRTFooter() {
               KRISHNA.DEV
             </div>
             <div className="text-xs glow-dim tracking-widest mb-4">
-              AI DEVELOPER • ML ENGINEER
+              AI ENGINEER
             </div>
             <div className="text-xs" style={{ color: "var(--crt-brown-dim)" }}>
               Building and shipping ML/DL solutions<br />
@@ -57,10 +57,16 @@ export function CRTFooter() {
                 { label: "GITHUB", href: "https://github.com/krsnadadhich" },
                 { label: "LINKEDIN", href: "https://linkedin.com/in/krsnadadhich" },
                 { label: "EMAIL", href: "mailto:krsnadadhich@gmail.com" },
-                { label: "VERCEL", href: "https://krsnadadhich.vercel.app" },
-              ].map(({ label, href }) => (
+                { label: "RESUME", href: "/resume.pdf", download: true },
+              ].map(({ label, href, download }) => (
                 <div key={label}>
-                  <a href={href} target="_blank" rel="noopener noreferrer" className="hover:glow-sm transition-all">
+                  <a
+                    href={href}
+                    target={download ? undefined : "_blank"}
+                    rel={download ? undefined : "noopener noreferrer"}
+                    download={download}
+                    className="hover:glow-sm transition-all"
+                  >
                     {">"} {label}
                   </a>
                 </div>

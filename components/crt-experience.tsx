@@ -11,14 +11,14 @@ const EXPERIENCE = [
     position: "AI/ML Intern",
     duration: "SEP 2025 — NOV 2025",
     location: "Bengaluru, India",
-    description: "Contributed to applied ML/NLP projects and internal analytics tooling using Jira and GitHub in an agile workflow.",
+    description: "Built and shipped core features for MIRA, a RAG-powered domain-restricted chatbot — spanning backend engineering, admin tooling, and Agile delivery.",
     highlights: [
-      "Developed and enhanced MIRA, a domain-restricted chatbot that answers strictly from a user-provided knowledge base",
-      "Ensured responses never confabulate or stray outside the source material",
-      "Collaborated on applied ML/NLP projects using agile methodology",
-      "Worked with GitHub and Jira for version control and project management",
+      "Developed and enhanced MIRA, an AI-powered domain-restricted chatbot using Retrieval-Augmented Generation (RAG) to generate accurate, context-aware responses exclusively from organization-specific knowledge bases — significantly reducing hallucinations while keeping answers source-grounded",
+      "Engineered core backend features — knowledge base management, chatbot configuration, conversation history, user authentication, and role-based administration — using PHP, MySQL, and REST APIs",
+      "Built an admin dashboard to manage chatbot instances, branding, subscriptions, and user access",
+      "Collaborated in an Agile development environment using Jira and GitHub for version control and project management",
     ],
-    skills: ["PYTHON", "NLP", "CHATBOTS", "GITHUB", "JIRA", "AGILE"],
+    skills: ["RAG", "PHP", "MYSQL", "REST API", "CHATBOTS", "GITHUB", "JIRA", "AGILE"],
   },
 ]
 
@@ -64,7 +64,7 @@ export function CRTExperience() {
 function ExperienceCard({ experience, isLast }: { experience: (typeof EXPERIENCE)[0]; isLast: boolean }) {
   return (
     <Reveal
-      className="group cursor-pointer crt-hover-tint"
+      className="group crt-hover-tint"
       style={{
         borderBottom: isLast ? "1px solid var(--crt-border-col)" : "1px solid var(--crt-border-col)",
       }}
