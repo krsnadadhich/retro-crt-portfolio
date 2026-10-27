@@ -2,6 +2,68 @@
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (window !== window.top) return;
 
+  const root = document.documentElement;
+  if (root.classList.contains('preload')) {
+    try { sessionStorage.setItem('loaded', '1'); } catch (err) {}
+    const el = document.createElement('div');
+    el.className = 'loader';
+    el.setAttribute('aria-hidden', 'true');
+    const dot = (t, pos, size, bg, bd) => '<div class="spin" style="--t:' + t + 's;inset:' + pos + '"><span style="position:absolute;top:-' + size / 2 + 'px;left:calc(50% - ' + size / 2 + 'px);width:' + size + 'px;height:' + size + 'px;background:' + bg + ';border:2px solid ' + bd + ';border-radius:50%"></span></div>';
+    const steps = ['INGEST', 'INDEX', 'RETRIEVE', 'GENERATE', 'CITE'];
+    el.innerHTML = '<div class="liquid"></div><div class="ui">' +
+      '<div class="top"><span class="brand">KRISHNA DADHICH</span><span>DWG. 001 / LOADING</span></div>' +
+      '<div class="mid"><div class="orbit">' +
+      '<div class="r spin" style="--t:50s;inset:0;border:1.5px dashed var(--ink);opacity:.6"></div>' +
+      '<div class="r spinr" style="--t:34s;inset:9%;border:1.5px solid var(--ink);opacity:.4"></div>' +
+      '<div class="r spin" style="--t:20s;inset:17%;z-index:2;border:1.5px dashed #fff"></div>' +
+      dot(11, '0', 18, '#fff', 'var(--ink)') + dot(7, '17%', 14, 'var(--ink)', 'var(--ink)') +
+      '<div class="photo"><img src="assets/48e173b4aeb63130f4a9fbc3df89fb41.png" alt=""></div>' +
+      '<div class="hl"></div><div class="vl"></div></div></div>' +
+      '<div class="bot"><div class="num"><span>0</span><small>%</small></div><ol class="steps">' +
+      steps.map((n, i) => '<li><b>0' + (i + 1) + '</b> ' + n + '</li>').join('') + '</ol></div></div>';
+    document.body.appendChild(el);
+    const liquid = el.firstChild, ui = el.querySelector('.ui'), numEl = el.querySelector('.num span'), stepEls = el.querySelectorAll('.steps li');
+    let loaded = document.readyState === 'complete';
+    addEventListener('load', () => { loaded = true; });
+    const W = () => innerWidth, H = () => innerHeight, M = 80;
+    const surface = (level, t, amp) => {
+      const w = W(), h = H(), pts = [];
+      for (let i = 0; i <= M; i++) {
+        const x = (i / M) * w;
+        const y = h * level + amp * h * (0.035 * Math.sin((i / M) * 9.4 + t * 2.6) + 0.02 * Math.sin((i / M) * 18.8 - t * 3.4) + 0.01 * Math.sin((i / M) * 31 + t * 4.2));
+        pts.push([x, y]);
+      }
+      return pts;
+    };
+    const fmt = (p) => p.map((q) => q[0].toFixed(1) + 'px ' + q[1].toFixed(1) + 'px').join(',');
+    const t0 = performance.now();
+    const FILL = 1500, DRAIN = 750;
+    let drainAt = 0;
+    const ease = (p) => 1 - Math.pow(1 - p, 3);
+    const frame = (now) => {
+      const t = (now - t0) / 1000;
+      if (!drainAt) {
+        let p = Math.min(1, (now - t0) / FILL);
+        let v = ease(p);
+        if (!loaded) v = Math.min(v, 0.9);
+        numEl.textContent = Math.round(v * 100);
+        stepEls.forEach((li, i) => li.classList.toggle('on', v * 100 >= i * 20 + 4));
+        const surf = surface(1 - v * 1.04, t, 1 - v * 0.6);
+        liquid.style.clipPath = 'polygon(0px ' + H() + 'px,' + fmt(surf) + ',' + W() + 'px ' + H() + 'px)';
+        if (p >= 1 && loaded) { drainAt = now; ui.classList.add('off'); numEl.textContent = 100; }
+        requestAnimationFrame(frame);
+        return;
+      }
+      const q = Math.min(1, (now - drainAt) / DRAIN);
+      const e = q < 0.5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2;
+      if (root.classList.contains('preload')) root.classList.remove('preload');
+      const edge = surface(1 - e * 1.06, t, 1 - e * 0.5);
+      liquid.style.clipPath = 'polygon(0px 0px,' + W() + 'px 0px,' + fmt(edge.slice().reverse()) + ')';
+      if (q < 1) requestAnimationFrame(frame); else el.remove();
+    };
+    requestAnimationFrame(frame);
+  }
+
   const N = 72;
   const blob = (cx, cy, R, t, amp, ux, uy, st) => {
     const pts = [];
