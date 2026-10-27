@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{if(window!==window.top)document.documentElement.classList.add("inwave");if(window!==window.top||sessionStorage.getItem("noFade")){document.documentElement.classList.add("noanim");sessionStorage.removeItem("noFade")}}catch(e){}</script>
+<script>try{if(window!==window.top){var h=document.documentElement;h.classList.add("inwave");h.style.setProperty("--z",getComputedStyle(window.parent.document.documentElement).getPropertyValue("--z"))}if(window!==window.top||sessionStorage.getItem("noFade")){document.documentElement.classList.add("noanim");sessionStorage.removeItem("noFade")}}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Krishna Dadhich | Applied AI Engineer</title>
 <meta name="description" content="Krishna Dadhich, applied AI engineer building RAG systems, voice agents and conversational AI that real people use.">
