@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{if(window!==window.top)document.documentElement.classList.add("inwave");if(window!==window.top||sessionStorage.getItem("noFade")){document.documentElement.classList.add("noanim");sessionStorage.removeItem("noFade")}}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Krishna Dadhich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+.lnk{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;align-items:baseline;padding:28px 0;border-bottom:1px solid var(--line);transition:background .25s,padding-left .25s}
+.lnk:hover{background:var(--accent);padding-left:28px}
+.lnk .k{font-family:'DM Mono',monospace;font-size:13px;min-width:90px;color:var(--muted)}
+.lnk:hover .k{color:var(--ink)}
+.lnk .v{font-size:clamp(20px,2.6vw,30px);font-weight:700;letter-spacing:-.01em;overflow-wrap:anywhere}
+.ping{width:10px;height:10px;border-radius:50%;background:#2FD6A0;display:inline-block;animation:ping 2s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(47,214,160,.8)}100%{box-shadow:0 0 0 14px rgba(47,214,160,0)}}
+.roles{margin:0;padding:8px 32px 20px;list-style:none}
+.roles li{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);font-weight:700;font-size:18px}
+.roles li::before{content:"";width:10px;height:10px;background:var(--accent);flex:none}
+@media (max-width:640px){
+.lnk{padding:20px 0}
+.roles{padding:4px 20px 12px}
+.roles li{font-size:16px;padding:12px 0}
+section.wrap>div[style*="background:#fff"] .mono{padding:20px!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<a href="index.html" class="brand" data-go><i></i>KRISHNA DADHICH</a>
+<nav aria-label="Main">
+<a href="index.html" class="nl" data-go>Home</a><a href="projects.html" class="nl" data-go>Projects</a><a href="about.html" class="nl" data-go>About</a><a href="contact.html" class="nl" aria-current="page">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="wrap" style="padding-top:70px">
+<div class="rise mono" style="--d:.1s;display:inline-flex;gap:12px;align-items:center;font-size:14px;color:var(--muted)"><span class="ping"></span>DWG. 004 / OPEN TO ENTRY LEVEL AI/ML ROLES</div>
+<h1 class="rise" style="--d:.2s;margin-top:22px;font-size:clamp(42px,8vw,116px);line-height:.94;font-weight:900;letter-spacing:-.045em;max-width:1000px">Let us build something that ships<span class="dot">.</span></h1>
+<div class="draw" style="--d:.7s;margin-top:40px"></div>
+</section>
+
+<section class="wrap" style="padding-top:56px;display:flex;flex-wrap:wrap;gap:56px;align-items:flex-start">
+<div style="flex:1 1 520px;min-width:0;border-top:2px solid var(--ink)">
+<a href="mailto:krsnadadhich@gmail.com" class="lnk"><span class="k">EMAIL</span><span class="v">krsnadadhich@gmail.com</span></a>
+<a href="https://github.com/krsnadadhich" class="lnk"><span class="k">GITHUB</span><span class="v">github.com/krsnadadhich</span></a>
+<a href="https://linkedin.com/in/krsnadadhich" class="lnk"><span class="k">LINKEDIN</span><span class="v">linkedin.com/in/krsnadadhich</span></a>
+<a href="https://krsnadadhich.vercel.app" class="lnk"><span class="k">SITE</span><span class="v">krsnadadhich.vercel.app</span></a>
+<div style="margin-top:40px"><a href="resume.pdf" class="btn fill" style="padding:16px 28px">Download resume (PDF)</a></div>
+</div>
+
+<div style="flex:1 1 360px;min-width:0;background:#fff;border:2px solid var(--ink)">
+<div class="mono" style="padding:28px 32px;border-bottom:2px solid var(--ink);font-size:13px;letter-spacing:.08em">ROLES I AM LOOKING FOR</div>
+<ul class="roles">
+<li>AI Engineer</li><li>ML Engineer</li><li>GenAI Engineer</li><li>AI Developer</li><li>NLP Engineer</li><li>Computer Vision Engineer</li>
+</ul>
+<div class="mono" style="padding:24px 32px;background:var(--ink);color:var(--bg);font-size:14px;line-height:1.7">Bengaluru, Pune and Mumbai.<br>Work from office or hybrid.</div>
+</div>
+</section>
+
+<section class="wrap page-end" style="padding-top:130px">
+<div class="foot" style="margin-top:0"><span>&copy; 2026 Krishna Dadhich. All rights reserved.</span><span><a href="index.html" class="nl" data-go>Home</a><a href="projects.html" class="nl" data-go>Projects</a><a href="about.html" class="nl" data-go>About</a></span></div>
+</section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>

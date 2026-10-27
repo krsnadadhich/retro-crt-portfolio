@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{if(window!==window.top)document.documentElement.classList.add("inwave");if(window!==window.top||sessionStorage.getItem("noFade")){document.documentElement.classList.add("noanim");sessionStorage.removeItem("noFade")}}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects | Krishna Dadhich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+.sheet:hover{transform:none;box-shadow:12px 12px 0 var(--accent)}
+.body{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(440px,100%),1fr))}
+.main{padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:18px}
+.main h2{margin:0;font-size:clamp(36px,5vw,60px)}
+.main p{margin:0;font-size:19px;line-height:1.6;color:var(--muted);text-wrap:pretty}
+.main ul{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.main li{display:grid;grid-template-columns:22px 1fr;gap:8px;line-height:1.6;text-wrap:pretty}
+.main li::before{content:"";width:10px;height:10px;background:var(--accent);margin-top:8px}
+.specs{background:#F4F7FA;border-left:2px solid var(--ink)}
+.specs div{padding:20px clamp(24px,3vw,40px);border-bottom:1px solid var(--line)}
+.specs dt{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:.08em}
+.specs dd{margin:6px 0 0;font-weight:700;font-size:18px;line-height:1.4}
+.specs{margin:0}
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-top:2px solid var(--ink);padding:14px clamp(28px,4vw,52px);font-family:'DM Mono',monospace;font-size:13px}
+.tag{font-family:'DM Mono',monospace;font-size:13px;color:var(--accent-ink);letter-spacing:.06em}
+@media (max-width:900px){.specs{border-left:0;border-top:2px solid var(--ink)}}
+@media (max-width:640px){
+.main{padding:24px 20px}
+.main p{font-size:17px}
+.specs div{padding:16px 20px}
+.bar{padding:12px 20px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<a href="index.html" class="brand" data-go><i></i>KRISHNA DADHICH</a>
+<nav aria-label="Main">
+<a href="index.html" class="nl" data-go>Home</a><a href="projects.html" class="nl" aria-current="page">Projects</a><a href="about.html" class="nl" data-go>About</a><a href="contact.html" class="nl" data-go>Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="wrap" style="padding-top:70px">
+<div class="eyebrow rise" style="--d:.1s">DWG. 002 / PROJECT SHEETS</div>
+<h1 class="rise" style="--d:.2s;margin-top:18px;font-size:clamp(42px,7.4vw,104px);line-height:.96;font-weight:900;letter-spacing:-.045em;max-width:1000px">Five systems, drawn to completion<span class="dot">.</span></h1>
+<div class="draw" style="--d:.7s;margin-top:34px"></div>
+<p class="lead rise" style="--d:.6s;margin:24px 0 0">Each one runs as a complete system. Four are my own builds, one comes from my internship at Medha Tech Solutions.</p>
+</section>
+
+<section class="wrap" style="padding-top:90px;display:flex;flex-direction:column;gap:48px">
+
+<article class="sheet">
+<div class="body">
+<div class="main">
+<div class="tag">DEPLOYED FOR DELIVERAIL</div>
+<h2>EMMA, AI Voice Receptionist</h2>
+<p>A voice agent that handles reception calls end to end, fully on device, for a logistics company.</p>
+<ul>
+<li><span>Speech to text with faster-whisper, reasoning through a local Ollama LLM, speech out with Coqui TTS.</span></li>
+<li><span>Request validation and a knowledge grounding check run in plain Python before the LLM is invoked.</span></li>
+<li><span>The model can only answer from RAG grounded knowledge or trigger a live shipment booking through tool calls.</span></li>
+</ul>
+</div>
+<dl class="specs">
+<div><dt>STACK</dt><dd>Python, faster-whisper, Ollama, Coqui TTS</dd></div>
+<div><dt>STATUS</dt><dd>Contracted and deployed for Deliverail</dd></div>
+<div><dt>NETWORK</dt><dd>Zero external API calls, fully offline</dd></div>
+<div><dt>COST</dt><dd>Zero per request cost</dd></div>
+</dl>
+</div>
+<div class="bar"><span>SHEET 01 / 05</span><a href="https://github.com/krsnadadhich" class="nl" style="color:var(--ink)">Source on GitHub &#8599;</a></div>
+</article>
+
+<article class="sheet">
+<div class="body">
+<div class="main">
+<div class="tag">TESTED AT CMR UNIVERSITY</div>
+<h2>Kuro, Local Multi Agent Assistant</h2>
+<p>A private, fully offline AI assistant where every assistant has its own knowledge base, prompt and settings.</p>
+<ul>
+<li><span>Answers from PDF, DOCX, TXT, CSV and Excel with streamed, cited responses and a confidence score.</span></li>
+<li><span>Hybrid retrieval combining FAISS and keyword search with reranking, plus a voice interface.</span></li>
+<li><span>CSV and Excel analytics with KPI reporting, user accounts, and backup and restore.</span></li>
+</ul>
+</div>
+<dl class="specs">
+<div><dt>STACK</dt><dd>React, FastAPI, Ollama, FAISS</dd></div>
+<div><dt>STATUS</dt><dd>Demoed and stress tested with CMR University faculty and students</dd></div>
+<div><dt>NETWORK</dt><dd>Runs locally through Ollama</dd></div>
+</dl>
+</div>
+<div class="bar"><span>SHEET 02 / 05</span><a href="https://github.com/krsnadadhich" class="nl" style="color:var(--ink)">Source on GitHub &#8599;</a></div>
+</article>
+
+<article class="sheet">
+<div class="body">
+<div class="main">
+<div class="tag">HUMAN APPROVAL FIRST</div>
+<h2>CareerOS, Autonomous Job Search</h2>
+<p>A personal AI command center that runs my job search across ten live product sections.</p>
+<ul>
+<li><span>Syncs and classifies job emails with the Gmail API, pulls roles from Adzuna and scores matches against my resume.</span></li>
+<li><span>Tracks every application through a pipeline, interview prep and recruiter follow ups.</span></li>
+<li><span>Every AI suggested action needs explicit confirmation before anything is sent or written. No scraping or ToS violating automation.</span></li>
+</ul>
+</div>
+<dl class="specs">
+<div><dt>STACK</dt><dd>Next.js, React, TypeScript, Prisma, PostgreSQL, Ollama</dd></div>
+<div><dt>TESTS</dt><dd>196 passing</dd></div>
+<div><dt>FEATURE</dt><dd>Ask AI chat panel grounded in my real tracked data</dd></div>
+</dl>
+</div>
+<div class="bar"><span>SHEET 03 / 05</span><a href="https://github.com/krsnadadhich" class="nl" style="color:var(--ink)">Source on GitHub &#8599;</a></div>
+</article>
+
+<article class="sheet">
+<div class="body">
+<div class="main">
+<div class="tag">RUNNING IN PRODUCTION</div>
+<h2>KENNY, Autonomous AI Streamer</h2>
+<p>An AI streamer persona that replies live to real comments and messages on Instagram and Discord.</p>
+<ul>
+<li><span>An LLM backed conversational pipeline that runs continuously in production.</span></li>
+<li><span>Reliability work in progress: retry logic for failed replies and a supervisor process.</span></li>
+<li><span>Growing the evaluation set toward 50 or more test cases.</span></li>
+</ul>
+</div>
+<dl class="specs">
+<div><dt>STACK</dt><dd>Python, Instagram API, Discord API, LLM</dd></div>
+<div><dt>STATUS</dt><dd>In production, reliability work ongoing</dd></div>
+<div><dt>CHANNELS</dt><dd>Instagram and Discord, with content on YouTube</dd></div>
+</dl>
+</div>
+<div class="bar"><span>SHEET 04 / 05</span><a href="https://github.com/krsnadadhich" class="nl" style="color:var(--ink)">Source on GitHub &#8599;</a></div>
+</article>
+
+<article class="sheet">
+<div class="body">
+<div class="main">
+<div class="tag">MEDHA TECH SOLUTIONS, INTERNSHIP</div>
+<h2>MIRA, Domain Restricted Chatbot</h2>
+<p>A RAG chatbot that answers from an organization’s own knowledge base and stays inside its domain.</p>
+<ul>
+<li><span>Source grounded responses that reduce hallucinations, built in an Agile team.</span></li>
+<li><span>Backend features for knowledge base management and role based administration.</span></li>
+<li><span>An admin dashboard to manage chatbot instances and user access.</span></li>
+</ul>
+</div>
+<dl class="specs">
+<div><dt>STACK</dt><dd>RAG, PHP, MySQL, REST APIs</dd></div>
+<div><dt>WHEN</dt><dd>Sep to Nov 2025, Bengaluru</dd></div>
+<div><dt>ROLE</dt><dd>AI/ML Intern</dd></div>
+</dl>
+</div>
+<div class="bar"><span>SHEET 05 / 05</span><span>Internship work, source private</span></div>
+</article>
+
+</section>
+
+<section class="wrap" style="padding-top:120px;padding-bottom:60px">
+<div class="cta">
+<h2>Want one of these in your product?</h2>
+<a href="contact.html" class="btn dark" data-go style="padding:16px 28px">Get in touch</a>
+</div>
+<div class="foot"><span>&copy; 2026 Krishna Dadhich. All rights reserved.</span><span><a href="index.html" class="nl" data-go>Home</a><a href="about.html" class="nl" data-go>About</a><a href="contact.html" class="nl" data-go>Contact</a></span></div>
+</section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>

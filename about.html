@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script>try{if(window!==window.top)document.documentElement.classList.add("inwave");if(window!==window.top||sessionStorage.getItem("noFade")){document.documentElement.classList.add("noanim");sessionStorage.removeItem("noFade")}}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Krishna Dadhich</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+.job{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px;padding:36px 0;border-bottom:1px solid var(--line)}
+.job p{margin:0;grid-column:span 2;color:var(--muted);line-height:1.7;font-size:17px;text-wrap:pretty}
+.job h3{font-size:24px;font-weight:700;line-height:1.2;margin-top:8px}
+@media (max-width:700px){.job p{grid-column:auto}}
+.panel{background:#fff;border:2px solid var(--ink)}
+.cred{padding:32px 36px}
+.cred+.cred{border-top:1px solid var(--line)}
+.cred h3{font-size:24px;font-weight:700;margin-top:8px;line-height:1.25}
+.cert{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.cert:last-child{border-bottom:0}
+.grp{font-family:'DM Mono',monospace;font-size:13px;color:var(--accent-ink);letter-spacing:.08em;padding-bottom:12px;border-bottom:2px solid var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+@media (max-width:640px){
+.cred{padding:22px 20px}
+.panel[style]{padding:8px 20px!important}
+.job{padding:26px 0}
+.job p{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+<a href="index.html" class="brand" data-go><i></i>KRISHNA DADHICH</a>
+<nav aria-label="Main">
+<a href="index.html" class="nl" data-go>Home</a><a href="projects.html" class="nl" data-go>Projects</a><a href="about.html" class="nl" aria-current="page">About</a><a href="contact.html" class="nl" data-go>Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="wrap" style="padding-top:70px;display:flex;flex-wrap:wrap;gap:48px;align-items:center;justify-content:space-between">
+<div style="flex:1 1 560px;min-width:0">
+<div class="eyebrow rise" style="--d:.1s">DWG. 003 / ABOUT</div>
+<h1 class="rise" style="--d:.2s;margin-top:18px;font-size:clamp(42px,7vw,100px);line-height:.96;font-weight:900;letter-spacing:-.045em">I finish what I build<span class="dot">.</span></h1>
+<div class="draw" style="--d:.7s;margin-top:34px;max-width:560px"></div>
+<p class="lead rise" style="--d:.6s;margin:24px 0 0;font-size:21px">I am an AI/ML engineer looking for an entry level role in GenAI, RAG systems, conversational AI or computer vision. I build AI systems that leave the lab and get used, and I test them with real users.</p>
+</div>
+<div class="orbit rise" style="--d:.5s;width:min(400px,100%);flex-basis:400px" aria-hidden="true">
+<div class="r spin" style="--t:60s;inset:0;border:1.5px dashed var(--ink);opacity:.5"></div>
+<div class="r spinr" style="--t:40s;inset:9%;border:1.5px solid var(--ink);opacity:.35"></div>
+<div class="r spin" style="--t:24s;inset:17%;z-index:2;border:1.5px dashed var(--accent)"></div>
+<div class="spin" style="--t:14s;inset:0"><span style="position:absolute;top:-9px;left:calc(50% - 9px);width:18px;height:18px;background:var(--accent);border:2px solid var(--ink);border-radius:50%"></span></div>
+<div class="spinr" style="--t:22s;inset:9%"><span style="position:absolute;bottom:-8px;left:calc(50% - 8px);width:16px;height:16px;background:var(--ink);border-radius:50%"></span></div>
+<div class="spin" style="--t:9s;inset:17%;z-index:2"><span style="position:absolute;top:-7px;left:calc(50% - 7px);width:14px;height:14px;background:#fff;border:2px solid var(--ink);border-radius:50%"></span></div>
+<div class="photo"><img src="assets/48e173b4aeb63130f4a9fbc3df89fb41.png" alt="Krishna Dadhich"></div>
+<div class="hl"></div><div class="vl"></div>
+</div>
+</section>
+
+<section class="wrap sec">
+<div class="eyebrow">SERVICE RECORD</div>
+<h2>Experience</h2>
+<div style="border-top:2px solid var(--ink)">
+<div class="job tl"><div><div class="mono" style="color:var(--accent-ink);font-size:14px">Dec 2025 to now</div><h3>AI Automation Engineer</h3><div style="color:var(--muted);margin-top:4px">Deliverail, Bengaluru</div></div><p>Built an AI booking chatbot with LLMs, Python and REST APIs that streamlines customer interactions and automates booking workflows. Engineered an admin dashboard with backend integrations, SQL data management and workflow automation, reducing repetitive manual tasks.</p></div>
+<div class="job tl"><div><div class="mono" style="color:var(--accent-ink);font-size:14px">Aug 2026 to now</div><h3>Open Source Contributor</h3><div style="color:var(--muted);margin-top:4px">Public GitHub repositories</div></div><p>Publish and maintain independent AI/ML projects, including RAG chatbots, an offline voice AI assistant and a computer vision access control system, each with setup documentation for others to use and build on.</p></div>
+<div class="job tl"><div><div class="mono" style="color:var(--accent-ink);font-size:14px">Sep to Nov 2025</div><h3>AI/ML Intern</h3><div style="color:var(--muted);margin-top:4px">Medha Tech Solutions, Bengaluru</div></div><p>Developed MIRA, a domain restricted RAG chatbot that gives source grounded answers and reduces hallucinations. Engineered knowledge base management and role based administration in PHP, MySQL and REST APIs.</p></div>
+</div>
+</section>
+
+<section class="wrap sec">
+<div class="eyebrow">CREDENTIALS</div>
+<h2>Education and certificates</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:32px">
+<div class="panel">
+<div class="cred"><div class="mono" style="font-size:13px;color:var(--accent-ink)">2024 TO 2026</div><h3>Master of Computer Applications</h3><div style="color:var(--muted);margin-top:6px">CMR University, AI and ML specialization, CGPA 8</div></div>
+<div class="cred"><div class="mono" style="font-size:13px;color:var(--accent-ink)">2020 TO 2023</div><h3>B.Sc. Mathematics</h3><div style="color:var(--muted);margin-top:6px">Subodh PG Autonomous College, 78%</div></div>
+</div>
+<div class="panel" style="padding:12px 36px">
+<div class="cert"><b>AI Fluency</b><span class="mono" style="font-size:14px;color:var(--muted)">Anthropic</span></div>
+<div class="cert"><b>Claude 101</b><span class="mono" style="font-size:14px;color:var(--muted)">Anthropic</span></div>
+<div class="cert"><b>Deep Learning with TensorFlow</b><span class="mono" style="font-size:14px;color:var(--muted)">IBM</span></div>
+<div class="cert"><b>Introduction to Generative AI</b><span class="mono" style="font-size:14px;color:var(--muted)">Google Cloud</span></div>
+<div class="cert"><b>The Joy of Computing using Python</b><span class="mono" style="font-size:14px;color:var(--muted)">NPTEL, IIT Madras</span></div>
+</div>
+</div>
+</section>
+
+<section class="wrap sec">
+<div class="eyebrow">MATERIALS</div>
+<h2>Toolkit</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:32px">
+<div><div class="grp">LANGUAGES</div><div class="chips"><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">SQL</span></div></div>
+<div><div class="grp">AI AND ML</div><div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LangGraph</span><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Scikit-learn</span><span class="chip">OpenCV</span><span class="chip">NLP</span><span class="chip">Prompt Engineering</span></div></div>
+<div><div class="grp">WEB AND BACKEND</div><div class="chips"><span class="chip">FastAPI</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Flask</span><span class="chip">PHP</span><span class="chip">REST APIs</span><span class="chip">Prisma</span><span class="chip">Auth.js</span></div></div>
+<div><div class="grp">AUTOMATION</div><div class="chips"><span class="chip">n8n</span><span class="chip">Gmail API</span><span class="chip">Adzuna API</span><span class="chip">Instagram API</span><span class="chip">Discord API</span><span class="chip">Tool Calling</span></div></div>
+<div><div class="grp">SYSTEMS AND MLOPS</div><div class="chips"><span class="chip">Ollama</span><span class="chip">FAISS</span><span class="chip">Vector Databases</span><span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">MLflow</span></div></div>
+<div><div class="grp">DATA AND TOOLS</div><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">GitHub</span><span class="chip">Jira</span><span class="chip">EDA</span><span class="chip">Feature Engineering</span></div></div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:140px;padding-bottom:60px">
+<div class="cta">
+<h2>Hiring for AI? Let us talk.</h2>
+<a href="contact.html" class="btn dark" data-go style="padding:16px 28px">Get in touch</a>
+</div>
+<div class="foot"><span>&copy; 2026 Krishna Dadhich. All rights reserved.</span><span><a href="index.html" class="nl" data-go>Home</a><a href="projects.html" class="nl" data-go>Projects</a><a href="contact.html" class="nl" data-go>Contact</a></span></div>
+</section>
+</main>
+<script src="site.js"></script>
+</body>
+</html>
